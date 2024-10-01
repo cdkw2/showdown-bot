@@ -180,7 +180,7 @@ async def set_update_interval(interaction: discord.Interaction, minutes: int):
         await interaction.response.send_message("Update interval must be at least 1 minute.")
         return
     
-    client.update_interval = minutes * 60  # Convert to seconds
+    client.update_interval = minutes * 60
     await interaction.response.send_message(f"Update interval set to {minutes} minutes.")
 
 client.run(get_bot_token())
