@@ -1,4 +1,3 @@
-
 # Showdown Bot
 
 A Discord bot to keep track of Pokémon Showdown progress and stats.
@@ -8,18 +7,19 @@ A Discord bot to keep track of Pokémon Showdown progress and stats.
  - [x] Track multiple players stats over time
  - [x] Automatically update tracked players' stats at configurable intervals
  - [x] Store player stats in CSV files for data analysis
- - [x] Discord slash command
+ - [x] Discord slash commands
+ - [x] Persist tracked players and update interval between bot restarts
  - [ ] Graph tracking
 
 ## Commands
 
-- `/stats <player> <category>`: Fetch and display current stats for a player in a specific category
-- `/track <player> <category>`: Start tracking a player's stats in a specific category
+- `/stats <player>`: Fetch and display current stats for a player in all categories
+- `/track <player>`: Start tracking a player's stats in all categories
 - `/untrack <player>`: Stop tracking a player's stats
 - `/list_tracked`: Display a list of all currently tracked players
 - `/set_update_interval <minutes>`: Set the interval for automatic stat updates
 
-Sample command: `/stats cdkw2 gen9randombattle`
+Sample command: `/stats cdkw2`
 
 ## Installation
 
@@ -44,11 +44,14 @@ Sample command: `/stats cdkw2 gen9randombattle`
 ## Configuration
 
 - The default update interval for tracked players is 5 minutes. You can change this using the `/set_update_interval` command.
-- Stats for tracked players are stored in CSV files named `<player>_<category>_stats.csv` in the same directory as the script.
+- Stats for tracked players are stored in CSV files named `<player>_<category>_stats.csv` in the `player_stats` folder.
+- The bot configuration (tracked players and update interval) is stored in `bot_config.json` and persists between bot restarts.
+- Player stats are stored in CSV files in a `player_stats` folder, with separate files for each player and category.
+- The bot configuration is stored in `bot_config.json` in the main directory.
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome! Please feel free to submit a Pull Request or shoot me a dm on discord.
 
 ## Disclaimer
 
